@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { create } from 'ipfs-http-client';
 import { environment } from '../../environments/environment';
+import { postData, profiles } from '../utils';
 
 @Component({
   selector: 'app-marketplace',
@@ -46,11 +47,22 @@ export class MarketplaceComponent {
         progress: updateProgress,
       };
 
+      let cid: null | string = null;
+
       try {
         const result = await this.ipfs.add(content, options);
-        console.log(`IPFS CID: ${result.cid.toString()}`);
+        cid = result.cid.toString();
       } catch (error) {
         console.error('Error uploading file:', error);
+      }
+
+      if (!cid) {
+        return;
+      }
+
+      const publication = await createPublication(cid);
+      if (!publication) {
+        return;
       }
     };
 
@@ -69,4 +81,62 @@ export class MarketplaceComponent {
       },
     });
   }
+}
+
+async function createPublication(cid: string): Promise<object | null> {
+  let token: string | null = null;
+
+  const obj: any = localStorage.getItem(window.ethereum.selectedAddress);
+  if (obj) {
+    token = JSON.parse(obj)['accessToken'];
+  }
+
+  const profile = profiles.get(
+    window.ethereum.selectedAddress.toString().toLowerCase()
+  );
+
+  return postData(
+    `
+mutation CreatePostTypedData {
+  createPostTypedData(request: {
+    profileId: "${profile}",
+    contentURI: "ipfs://${cid}",
+    collectModule: {
+      revertCollectModule: true
+    },
+    referenceModule: {
+      followerOnlyReferenceModule: false
+    }
+  }) {
+    id
+    expiresAt
+    typedData {
+      types {
+        PostWithSig {
+          name
+          type
+        }
+      }
+      domain {
+        name
+        chainId
+        version
+        verifyingContract
+      }
+      value {
+        nonce
+        deadline
+        profileId
+        contentURI
+        collectModule
+        collectModuleInitData
+        referenceModule
+        referenceModuleInitData
+      }
+    }
+  }
+}`,
+    {},
+    token
+  );
 }

@@ -1,38 +1,10 @@
 import { Injectable } from '@angular/core';
 import { ethers } from 'ethers';
 import { BehaviorSubject } from 'rxjs';
-
-const url = 'https://api-mumbai.lens.dev';
+import { postData } from '../utils';
 
 const signed: Map<string, string> = new Map();
 const challenges: Map<string, string> = new Map();
-
-async function postData(query: any, variables: any): Promise<object | null> {
-  try {
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        query: query,
-        variables: variables,
-      }),
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
-    const data = await response.json();
-
-    return data;
-  } catch (error) {
-    console.error('Error posting data:', error);
-  }
-
-  return null;
-}
 
 @Injectable({
   providedIn: 'root',
