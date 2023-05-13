@@ -9,7 +9,7 @@ module.exports = {
           turquoise: "#51B7AF",
           red: "#F25C5C",
           yellow: "#F2C85C",
-          lightblue: "#00B7F1",
+          blue: "#00B7F1",
           white: "#FFFFFF",
           lightgrey: "#F6F7F9",
           darkgrey: "#0D1F2F"
