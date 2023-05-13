@@ -75,75 +75,104 @@
   
     <div class="bg-white">
       <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-        <h2 class="text-4xl font-bold tracking-tight text-gray-900">Customers also purchased</h2>
+        <h2 class="text-4xl font-bold tracking-tight text-gray-900">Marketplace</h2>
   
         <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
   
           <div v-for="product in products" :key="product.id" class="group relative">
-            <div class="w-full overflow-hidden rounded-md lg:aspect-none group-hover:opacity-75">
-              <img class="h-30 w-30 rounded-full" src="../assets/images/rodrigo.jpeg" alt="">
+            <div class="flex items-center justify-center">
+              <img class="h-40 w-40 rounded-full" src="../assets/images/tom.jpeg" alt="">
             </div>
             <div class="mt-4 flex justify-between">
               <div>
-                <h3 class="text-sm text-darkblue">
-                  <a :href="product.href" >
-                    <b class="text-xl">FileName</b>
-                  </a>
-                </h3>
-                <p class="mt-1 text-sm text-gray-500">100 ETH</p>
-                <div class="example-button-row">
+                <h3 class="text-sm text-darkblue px-4">
+                      <a :href="product.href">
+                        <b>FileName</b>
+                      </a>
+                    </h3>
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="p-4">
+                    <button class="rounded border border-brand-blue bg-brand-blue px-6 py-3 text-white transition-all duration-200 hover:scale-105 hover:bg-white hover:text-brand-blue">Download</button>
+                    
+                  </div>
+                  <div class="p-4">
+                    <button class="rounded border border-brand-darkblue bg-white px-6 py-3 text-brand-darkblue transition-all duration-200 hover:scale-105 hover:bg-brand-darkblue hover:text-white">Donate</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
   
           <div v-for="product in products" :key="product.id" class="group relative">
-            <div class="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-              <img :src="product.imageSrc" :alt="product.imageAlt" class="h-full w-full object-cover object-center lg:h-full lg:w-full" />
+            <div class="flex items-center justify-center">
+              <img class="h-40 w-40 rounded-full" src="../assets/images/tom.jpeg" alt="">
             </div>
             <div class="mt-4 flex justify-between">
               <div>
-                <h3 class="text-sm text-darkblue">
-                  <a :href="product.href">
-                    <b>FileName</b>
-                  </a>
-                </h3>
-                <p class="mt-1 text-sm text-gray-500">100 ETH</p>
+                <div class="grid grid-cols-2 gap-4 pt-4">
+                  <div class="p-4">
+                    <h3 class="text-sm text-darkblue">
+                      <a :href="product.href">
+                        <b>FileName</b>
+                      </a>
+                    </h3>
+                    <p class="mt-1 text-sm text-gray-500">100 ETH</p>
+                  </div>
+                  <div class="p-4">
+                    <button class="rounded border border-brand-darkblue bg-brand-darkblue px-6 py-3 text-white transition-all duration-200 hover:scale-105 hover:bg-white hover:text-brand-darkblue">Buy</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
   
           <div v-for="product in products" :key="product.id" class="group relative">
-            <div class="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-              <img :src="product.imageSrc" :alt="product.imageAlt" class="h-full w-full object-cover object-center lg:h-full lg:w-full" />
+            <div class="flex items-center justify-center">
+              <img class="h-40 w-40 rounded-full" src="../assets/images/tom.jpeg" alt="">
             </div>
             <div class="mt-4 flex justify-between">
               <div>
-                <h3 class="text-sm text-darkblue">
-                  <a :href="product.href">
-                    <b>FileName</b>
-                  </a>
-                </h3>
-                <p class="mt-1 text-sm text-gray-500">100 ETH</p>
+                <div class="grid grid-cols-2 gap-4 pt-4">
+                  <div class="p-4">
+                    <h3 class="text-sm text-darkblue">
+                      <a :href="product.href">
+                        <b>FileName</b>
+                      </a>
+                    </h3>
+                    <p class="mt-1 text-sm text-gray-500">100 ETH</p>
+                  </div>
+                  <div class="p-4">
+                    <button class="rounded border border-brand-darkblue bg-brand-darkblue px-6 py-3 text-white transition-all duration-200 hover:scale-105 hover:bg-white hover:text-brand-darkblue">Buy</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
   
           <div v-for="product in products" :key="product.id" class="group relative">
-            <div class="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-              <img :src="product.imageSrc" :alt="product.imageAlt" class="h-full w-full object-cover object-center lg:h-full lg:w-full" />
+            <div class="flex items-center justify-center">
+              <img class="h-40 w-40 rounded-full" src="../assets/images/tom.jpeg" alt="">
             </div>
             <div class="mt-4 flex justify-between">
               <div>
-                <h3 class="text-sm text-darkblue">
-                  <a :href="product.href">
-                    <b>FileName</b>
-                  </a>
-                </h3>
-                <p class="mt-1 text-sm text-gray-500">100 ETH</p>
+                <h3 class="text-sm text-darkblue px-4">
+                      <a :href="product.href">
+                        <b>FileName</b>
+                      </a>
+                    </h3>
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="p-4">
+                    <button class="rounded border border-brand-blue bg-brand-blue px-6 py-3 text-white transition-all duration-200 hover:scale-105 hover:bg-white hover:text-brand-blue">Download</button>
+                    
+                  </div>
+                  <div class="p-4">
+                    <button class="rounded border border-brand-darkblue bg-white px-6 py-3 text-brand-darkblue transition-all duration-200 hover:scale-105 hover:bg-brand-darkblue hover:text-white">Donate</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
