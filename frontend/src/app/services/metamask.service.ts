@@ -75,7 +75,6 @@ export class MetamaskService {
   }
 
   handleChainChanged(): void {
-    console.log({ log: window.ethereum });
     this.currentChainId$.next(window.ethereum.chainId);
     window.ethereum.on('chainChanged', () => {
       window.location.reload();
@@ -90,6 +89,10 @@ export class MetamaskService {
     window.ethereum.on('accountsChanged', () => {
       window.location.reload();
     });
+
+    if (window.localStorage.getItem(window.ethereum.selectedAddress)) {
+      return;
+    }
 
     if (challenges.has(window.ethereum.selectedAddress)) {
       return;
@@ -121,6 +124,31 @@ export class MetamaskService {
     );
 
     signed.set(text, signature);
+
+    const token = await this.getToken(
+      window.ethereum.selectedAddress,
+      signature
+    );
+
+    if (!token) {
+      return;
+    }
+
+    interface TokenResponse {
+      data: {
+        authenticate: {
+          accessToken: string;
+          refreshToken: string;
+        };
+      };
+    }
+
+    const parsedToken = token as TokenResponse;
+
+    window.localStorage.setItem(
+      window.ethereum.selectedAddress,
+      JSON.stringify(parsedToken['data']['authenticate'])
+    );
   }
 
   async getBalance() {
@@ -145,6 +173,26 @@ export class MetamaskService {
       { address: address }
     );
   }
+
+  async getToken(address: string, signature: string): Promise<object | null> {
+    return postData(
+      `
+   mutation Authenticate(
+    $address: EthereumAddress!
+    $signature: Signature!
+  ) {
+    authenticate(request: {
+      address: $address,
+      signature: $signature
+    }) {
+      accessToken
+      refreshToken
+    }
+  }
+`,
+      { address: address, signature: signature }
+    );
+  }
 }
 
 async function signMessageWithMetaMask(
@@ -166,7 +214,6 @@ async function signMessageWithMetaMask(
       ],
     });
 
-    console.log('Signed message:', signedMessage);
     return signedMessage;
   } catch (error) {
     console.error('Error signing message:', error);
