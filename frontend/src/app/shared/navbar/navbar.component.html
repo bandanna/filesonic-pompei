@@ -1,60 +1,72 @@
-<div class="p-4">
-  <div class="flex items-center justify-between gap-6">
-    <img src="../assets/images/logo1.jpg" class="w-36 bg-wite" />
-    <div class="flex flex-row items-center gap-4 text-sm">
+<header class="bg-white">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <div class="flex lg:flex-1">
 
-      <button routerLink=""><b>Home</b></button>
-      <button routerLink="profile"><b>Profile</b></button>
-      <button routerLink="marketplace"><b>Marketplace</b></button>
+      <a href="#" class="-m-1.5 p-1.5">
+        <span class="sr-only"><button routerLink="profile"><b>Profile</b></button></span>
+        <img class="h-8 w-auto" src="../assets/images/logo1.jpg" alt="">
+      </a>
+    </div>
+    <div class="flex lg:hidden">
+      <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+        <span class="sr-only">Open main menu</span>
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="hidden lg:flex lg:gap-x-32">
+      <a class="text-sm font-semibold leading-6 text-gray-900" routerLink="">Marketplace</a>
+      <a class="text-sm font-semibold leading-6 text-gray-900" routerLink="profile">Profile</a>
+    </div>
+
+    <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+      <span
+          class="rounded border-brand-darkblue bg-brand-darkblue px-6 py-3 text-white transition-all duration-200 hover:scale-105 hover:bg-white hover:text-brand-darkblue"
+          *ngIf="hasMetamask && !(currentAccount$ | async)"
+          (click)="connectWallet()"
+          >CONNECT WALLET</span
+      >
 
       <span
-        class="p-4 font-bold text-white break-all rounded bg-brand-darkblue"
-        *ngIf="currentAccount$ | async"
-        >{{ currentAccount$ | async }}</span>
-
-      <span
-        class="p-4 font-bold text-white break-all rounded bg-brand-darkblue"
-        *ngIf="balance$ | async"
-        >{{ balance$ | async }}</span>
-
-      <span
-        class="p-4 font-bold text-white break-all rounded cursor-pointer bg-brand-darkblue"
-        *ngIf="hasMetamask && !(currentAccount$ | async)"
-        (click)="connectWallet()"
-        >CONNECT WALLET</span>
-
-      <span
-        class="p-4 font-bold text-white rounded bg-brand-yellow"
-        *ngIf="!hasMetamask"
-        >PLEASE INSTALL METAMASK</span>
-
-        <div class="relative inline-block text-left">
-          <div>
-            <button type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
-              Options
-              <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-              </svg>
-            </button>
-          </div>
-    
-          <div class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-            <div class="py-1" role="none">
-              <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-              <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">Account settings</a>
-              <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1">Support</a>
-              <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2">License</a>
-              <form method="POST" action="#" role="none">
-                <button type="submit" class="text-gray-700 block w-full px-4 py-2 text-left text-sm" role="menuitem" tabindex="-1" id="menu-item-3">Sign out</button>
-              </form>
-            </div>
-          </div>
-        </div>
+          class="rounded border-brand-darkblue bg-brand-darkblue px-6 py-3 text-white transition-all duration-200 hover:scale-105 hover:bg-white hover:text-brand-darkblue"
+          *ngIf="hasMetamask && (currentAccount$ | async)"
+          (click)="login()"
+          >CONNECT LENS</span
+      >
+    </div>
+  </nav>
+  <!-- Mobile menu, show/hide based on menu open state. -->
+  <div class="lg:hidden" role="dialog" aria-modal="true">
+    <!-- Background backdrop, show/hide based on slide-over state. -->
+    <div class="fixed inset-0 z-10"></div>
+    <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
     </div>
   </div>
-</div>
+</header>
 
 <script setup>
   import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
   import { ChevronDownIcon } from '@heroicons/vue/20/solid'
+</script>
+  
+<script>
+  mendeleyWebImporter = {
+  downloadPdfs(e,t) { return this._call('downloadPdfs', [e,t]); },
+  open() { return this._call('open', []); },
+  setLoginToken(e) { return this._call('setLoginToken', [e]); },
+  _call(methodName, methodArgs) {
+    const id = Math.random();
+    window.postMessage({ id, token: '0.6974652725800021', methodName, methodArgs }, 'https://tailwindui.com');
+    return new Promise(resolve => {
+      const listener = window.addEventListener('message', event => {
+        const data = event.data;
+        if (typeof data !== 'object' || !('result' in data) || data.id !== id) return;
+        window.removeEventListener('message', listener);
+        resolve(data.result);
+      });
+    });
+  }
+};
 </script>

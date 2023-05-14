@@ -10,11 +10,6 @@ const routes: Routes = [
           import('./profile/profile.module').then((m) => m.ProfileModule),
       },
       {
-        path: 'marketplace',
-        loadChildren: () =>
-          import('./marketplace/marketplace.module').then((m) => m.MarketplaceModule),
-      },
-      {
         path: '',
         loadChildren: () =>
           import('./index/index.module').then((m) => m.IndexModule),
@@ -22,6 +17,7 @@ const routes: Routes = [
     ]
   }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

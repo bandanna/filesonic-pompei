@@ -1,5 +1,15 @@
+<style>
+  .arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid black;
+  }
+</style>
+
 <div>
-    <div class="relative isolate overflow-hidden sm:py-4">
+    <div class="relative isolate overflow-hidden sm:py-6">
       <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center">
       <div class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl" aria-hidden="true">
         <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
@@ -7,173 +17,83 @@
       <div class="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu" aria-hidden="true">
         <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
       </div>
-      <div class="py-24">
+      <div class="py-20">
         <div class="mx-auto grid max-w-7xl gap-x-8 xl:grid-cols-3">
           <div class="max-w-2xl">
             <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Meet Our Team</h2>
-            <p class="mt-6 text-lg leading-8 text-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <p class="mt-6 text-lg leading-8 text-white">We're a diverse group of passionate innovators fueled by a shared mission to defy limits and transform ideas into reality. With a blend of coding expertise, design prowess, and collaborative spirit, we're poised to conquer challenges and create groundbreaking solutions. Get ready for an electrifying journey as we unleash our collective genius and redefine what's possible in the hackathon arena. Together, we'll inspire, amaze, and leave an indelible mark on the world of innovation.</p>
           </div>
           <ul role="list" class="grid gap-x-8 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
             <li>
-              <div class="flex items-center gap-x-6">
-                <img class="h-24 w-24 rounded-full" src="../assets/images/rui.jpeg" alt="">
+              <div class="flex items-center gap-x-6 aspect-w-4 aspect-h-3">
+                <img class="h-24 w-24 rounded-full object-cover object-center" src="../assets/images/rui.jpeg" alt="">
                 <div>
                   <h3 class="text-base font-semibold leading-7 tracking-tight text-white">Rui Lagos</h3>
-                  <p class="text-sm font-semibold leading-6 text-white">______________</p>
+                  <p class="text-sm font-semibold leading-6 text-white">Security Expert</p>
                 </div>
               </div>
             </li>
     
             <li>
-              <div class="flex items-center gap-x-6">
-                <img class="h-24 w-24 rounded-full" src="../assets/images/rodrigo.jpeg" alt="">
+              <div class="flex items-center gap-x-6 aspect-w-4 aspect-h-3">
+                <img class="h-24 w-24 rounded-full object-cover object-center" src="../assets/images/rodrigo.jpeg" alt="">
                 <div>
                   <h3 class="text-base font-semibold leading-7 tracking-tight text-white">Rodrigo Sarroeira</h3>
                   <p class="text-sm font-semibold leading-6 text-white">Invited Assistant at ISCTE-IUL</p>
                 </div>
               </div>
             </li>
-    
-            <li>
-              <div class="flex items-center gap-x-6">
-                <img class="h-24 w-24 rounded-full" src="../assets/images/ward.jpeg" alt="">
-                <div>
-                  <h3 class="text-base font-semibold leading-7 tracking-tight text-white">Ward Taya</h3>
-                  <p class="text-sm font-semibold leading-6 text-white">__________</p>
-                </div>
-              </div>
-            </li>
-    
-            <li>
-              <div class="flex items-center gap-x-6">
-                <img class="h-24 w-24 rounded-full" src="../assets/images/tom.jpeg" alt="">
-                <div>
-                  <h3 class="text-base font-semibold leading-7 tracking-tight text-white">Tom Fiodorov</h3>
-                  <p class="text-sm font-semibold leading-6 text-white">Developer</p>
-                </div>
-              </div>
-            </li>
-    
-            <li>
-              <div class="flex items-center gap-x-6">
-                <img class="h-24 w-24 rounded-full" src="../assets/images/chatgpt.png" alt="">
-                <div>
-                  <h3 class="text-base font-semibold leading-8 tracking-tight text-white">ChatGPT</h3>
-                  <p class="text-sm font-semibold leading-6 text-white">Master Advisor</p>
-                </div>
-              </div>
-            </li>
           </ul>
         </div>
+        <br>
+        <br>
       </div>
-  
+
+      <div style="display: flex;justify-content: center;align-items: center;">
+        <svg class="w-20 h-20 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 12.586L4.707 7.293a1 1 0 0 1 1.414-1.414L10 10.586l4.879-4.879a1 1 0 0 1 1.414 1.414L10 12.586z"/>
+        </svg>
+      </div>
     </div>
-  
-    <br>
-    <br>
+    
     <br>
   
     <div class="bg-white">
       <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <h2 class="text-4xl font-bold tracking-tight text-gray-900">Marketplace</h2>
-  
-        <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-  
-          <div v-for="product in products" :key="product.id" class="group relative">
-            <div class="flex items-center justify-center">
-              <img class="h-40 w-40 rounded-full" src="../assets/images/tom.jpeg" alt="">
-            </div>
-            <div class="mt-4 flex justify-between">
-              <div>
-                <h3 class="text-sm text-darkblue px-4">
-                      <a :href="product.href">
-                        <b>FileName</b>
-                      </a>
-                    </h3>
-                <div class="grid grid-cols-2 gap-4">
-                  <div class="p-4">
-                    <button class="rounded border border-brand-blue bg-brand-blue px-6 py-3 text-white transition-all duration-200 hover:scale-105 hover:bg-white hover:text-brand-blue">Download</button>
-                    
-                  </div>
-                  <div class="p-4">
-                    <button class="rounded border border-brand-darkblue bg-white px-6 py-3 text-brand-darkblue transition-all duration-200 hover:scale-105 hover:bg-brand-darkblue hover:text-white">Donate</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-  
-          <div v-for="product in products" :key="product.id" class="group relative">
-            <div class="flex items-center justify-center">
-              <img class="h-40 w-40 rounded-full" src="../assets/images/tom.jpeg" alt="">
-            </div>
-            <div class="mt-4 flex justify-between">
-              <div>
-                <div class="grid grid-cols-2 gap-4 pt-4">
-                  <div class="p-4">
-                    <h3 class="text-sm text-darkblue">
-                      <a :href="product.href">
-                        <b>FileName</b>
-                      </a>
-                    </h3>
-                    <p class="mt-1 text-sm text-gray-500">100 ETH</p>
-                  </div>
-                  <div class="p-4">
-                    <button class="rounded border border-brand-darkblue bg-brand-darkblue px-6 py-3 text-white transition-all duration-200 hover:scale-105 hover:bg-white hover:text-brand-darkblue">Buy</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-  
-          <div v-for="product in products" :key="product.id" class="group relative">
-            <div class="flex items-center justify-center">
-              <img class="h-40 w-40 rounded-full" src="../assets/images/tom.jpeg" alt="">
-            </div>
-            <div class="mt-4 flex justify-between">
-              <div>
-                <div class="grid grid-cols-2 gap-4 pt-4">
-                  <div class="p-4">
-                    <h3 class="text-sm text-darkblue">
-                      <a :href="product.href">
-                        <b>FileName</b>
-                      </a>
-                    </h3>
-                    <p class="mt-1 text-sm text-gray-500">100 ETH</p>
-                  </div>
-                  <div class="p-4">
-                    <button class="rounded border border-brand-darkblue bg-brand-darkblue px-6 py-3 text-white transition-all duration-200 hover:scale-105 hover:bg-white hover:text-brand-darkblue">Buy</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-  
-          <div v-for="product in products" :key="product.id" class="group relative">
-            <div class="flex items-center justify-center">
-              <img class="h-40 w-40 rounded-full" src="../assets/images/tom.jpeg" alt="">
-            </div>
-            <div class="mt-4 flex justify-between">
-              <div>
-                <h3 class="text-sm text-darkblue px-4">
-                      <a :href="product.href">
-                        <b>FileName</b>
-                      </a>
-                    </h3>
-                <div class="grid grid-cols-2 gap-4">
-                  <div class="p-4">
-                    <button class="rounded border border-brand-blue bg-brand-blue px-6 py-3 text-white transition-all duration-200 hover:scale-105 hover:bg-white hover:text-brand-blue">Download</button>
-                    
-                  </div>
-                  <div class="p-4">
-                    <button class="rounded border border-brand-darkblue bg-white px-6 py-3 text-brand-darkblue transition-all duration-200 hover:scale-105 hover:bg-brand-darkblue hover:text-white">Donate</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <br>
+        <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-16 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+          <div *ngFor="let post of posts">
 
+            <div v-for="product in products" class="group relative2 p-4 shadow-lg">
+              <div class="flex items-center justify-center py-4">
+              <b>@{{post.profile.id}}</b>
+              </div>
+              <a [href]="post.metadata.media[0].original.url" target="_blank"><i class="fas fa-download"></i></a>
+              <div class="flex items-center justify-center">
+                <img class="h-40 w-40 rounded-full" [src]="post.metadata.media[0].original.url" alt="">
+              </div>
+              <div class="mt-4 flex justify-between">
+                <div>
+                  <h3 class="text-sm text-darkblue px-4 h-20">
+                    <a :href="product.href">
+                      <b>{{post.metadata.name}}</b>
+                    </a>
+                  </h3>
+                  <div class="grid grid-cols-2 gap-4">
+                    <div class="p-4">
+                      <button (click)="collect()" class="rounded border border-brand-blue bg-brand-blue px-6 py-3 text-white transition-all duration-200 hover:scale-105 hover:bg-white hover:text-brand-blue">Collect</button>
+                    </div>
+                    <div class="p-4">
+                      <button (click)="donate()" class="rounded border border-brand-blue bg-white px-6 py-3 text-brand-darkblue transition-all duration-200 hover:scale-105 hover:bg-brand-darkblue hover:text-white">Donate</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
